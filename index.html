@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf8">
+    <title>Hot OAK Demo</title>
+  </head>
+
+  <body>
+    <h1>Hot OAK Demo</h1>
+
+    <main>
+
+      <p>
+	<label for='query'>SQL</label>
+	<br />
+	<textarea id="query" cols="80" rows="12">SELECT * FROM class_node</textarea>
+      </p>
+
+      <p>
+	<select name="ont" id="ont">
+	  <option value="eraseme.eco.db">ECO</option>
+	  <option value="eraseme.envo.db">ENVO</option>
+	  <option value="eraseme.go.db">GO</option>
+	</select>
+      </p>
+
+      <p id="button_holder"><button id="button">Execute</button></p>
+
+      <p>
+	<label for='query'>Output</label>
+	<br />
+	<pre id="output">Results will be here, please be patient...</pre>
+      </p>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.min.js" integrity="sha512-VYs2RuvWreNg7oouVhZ/9bEvdPgyd5L2iCPCB8+8Qks/PHbmnc82TQOEctYoEKPveJGML8s+3NGcUEZYJrFIqg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript">
+
+      // Global?
+      config = {
+	  locateFile: filename => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/${filename}`
+      }
+      initSqlJs(config).then(function(SQL){
+
+	  var database;
+	  var current_ont = 'eraseme.eco.db';
+
+	  function execute(db, q){
+	      console.log('execute: ' + q);
+	      var ret = db.exec(q);
+	      console.log('done');
+	      return ret
+	  }
+	  function render(obj){
+	      document.getElementById("output").innerHTML =
+		  JSON.stringify(obj, null, "\t");
+	  }
+	  function buttonClick(){
+	      console.log('click!');
+
+	      var next_ont = document.getElementById("ont").value;
+	      if( next_ont != current_ont ){
+		  console.log('need to update ontology');
+
+		  var xhr = new XMLHttpRequest();
+		  current_ont = document.getElementById("ont").value;
+		  xhr.open('GET', 'https://s3.amazonaws.com/go-public/' + current_ont, true);
+		  xhr.responseType = 'arraybuffer';
+		  xhr.onload = e => {
+
+		      console.log("database grabbed");
+
+		      var uInt8Array = new Uint8Array(xhr.response);
+		      database = new SQL.Database(uInt8Array);
+
+		      var q = document.getElementById("query").value;
+		      var contents = execute(database, q);
+		      render(contents);
+		  };
+		  xhr.send();
+		  document.getElementById("output").innerHTML =
+		      'Results will be here, please be patient...';
+
+	      }else{
+		  console.log('same ontology');
+
+		  document.getElementById("output").innerHTML =
+		      'Results will be here, please be patient...';
+		  var q = document.getElementById("query").value;
+		  var contents = execute(database, q);
+		  render(contents);
+	      }
+	  }
+
+
+	  console.log("page is fully loaded; initialize");
+
+	  var xhr = new XMLHttpRequest();
+	  current_ont = document.getElementById("ont").value;
+	  xhr.open('GET', 'https://s3.amazonaws.com/go-public/' + current_ont, true);
+	  xhr.responseType = 'arraybuffer';
+	  xhr.onload = e => {
+
+	      console.log("database grabbed");
+
+	      var uInt8Array = new Uint8Array(xhr.response);
+	      database = new SQL.Database(uInt8Array);
+
+	      document.getElementById("button").onclick = buttonClick;
+
+	      // I/O cycle.
+	      console.log("i/o cycle started");
+	      var query = document.getElementById("query").value;
+	      var contents = execute(database, query);
+	      render(contents);
+	  };
+	  xhr.send();
+      });
+
+    </script>
+  </body>
+
+</html>
