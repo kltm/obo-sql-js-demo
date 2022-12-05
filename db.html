@@ -1,0 +1,354 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf8">
+    <title>Hot OAK Demo</title>
+  </head>
+
+  <body>
+    <h1>Hot OAK Demo</h1>
+
+    <main>
+
+      <p>
+	<label for='query'>SQL</label>
+	<br />
+	<textarea id="query" cols="80" rows="12">SELECT * FROM class_node</textarea>
+      </p>
+
+      <p>
+	<select name="ont" id="ont">
+	  <!-- Manually inserted list. -->
+<option value="ado.db">ado (16.8 MB)</option>
+<option value="aeo.db">aeo (1.1 MB)</option>
+<option value="agro.db">agro (41.2 MB)</option>
+<option value="aio.db">aio (520.0 KB)</option>
+<option value="aism.db">aism (228.7 MB)</option>
+<option value="allotrope.db">allotrope (47.1 MB)</option>
+<option value="amphx.db">amphx (1.7 MB)</option>
+<option value="apo.db">apo (1.5 MB)</option>
+<option value="apollo_sv.db">apollo_sv (13.8 MB)</option>
+<option value="aro.db">aro (39.1 MB)</option>
+<option value="bad-ontology.db">bad-ontology (520.0 KB)</option>
+<option value="bao.db">bao (24.9 MB)</option>
+<option value="bco.db">bco (2.5 MB)</option>
+<option value="bero.db">bero (8.2 GB)</option>
+<option value="bfo.db">bfo (548.0 KB)</option>
+<option value="biolink.db">biolink (4.2 MB)</option>
+<option value="biopax.db">biopax (684.0 KB)</option>
+<option value="bspo.db">bspo (1.4 MB)</option>
+<option value="bto.db">bto (23.0 MB)</option>
+<option value="caro.db">caro (25.5 MB)</option>
+<option value="cdao.db">cdao (636.0 KB)</option>
+<option value="cdno.db">cdno (27.8 MB)</option>
+<option value="ceph.db">ceph (0 B)</option>
+<option value="chebi.db">chebi (2.9 GB)</option>
+<option value="cheminf.db">cheminf (4.3 MB)</option>
+<option value="chiro.db">chiro (57.0 MB)</option>
+<option value="chmo.db">chmo (15.4 MB)</option>
+<option value="cido.db">cido (185.4 MB)</option>
+<option value="cio.db">cio (520.0 KB)</option>
+<option value="cl.db">cl (489.4 MB)</option>
+<option value="clao.db">clao (8.5 MB)</option>
+<option value="clo.db">clo (410.0 MB)</option>
+<option value="clyh.db">clyh (964.0 KB)</option>
+<option value="cme.db">cme (1.2 MB)</option>
+<option value="cmo.db">cmo (0 B)</option>
+<option value="co_324.db">co_324 (4.6 MB)</option>
+<option selected value="cob.db">cob (520.0 KB)</option>
+<option value="colao.db">colao (9.8 MB)</option>
+<option value="cosmo.db">cosmo (3.6 GB)</option>
+<option value="cro.db">cro (652.0 KB)</option>
+<option value="cteno.db">cteno (4.2 MB)</option>
+<option value="cto.db">cto (1.7 MB)</option>
+<option value="cvdo.db">cvdo (3.0 MB)</option>
+<option value="ddanat.db">ddanat (936.0 KB)</option>
+<option value="ddpheno.db">ddpheno (4.2 MB)</option>
+<option value="dideo.db">dideo (3.7 MB)</option>
+<option value="disdriv.db">disdriv (520.0 KB)</option>
+<option value="doid.db">doid (88.9 MB)</option>
+<option value="dpo.db">dpo (213.6 MB)</option>
+<option value="dron.db">dron (3.5 GB)</option>
+<option value="duo.db">duo (1.7 MB)</option>
+<option value="ecao.db">ecao (8.7 MB)</option>
+<option value="eco.db">eco (25.0 MB)</option>
+<option value="ecocore.db">ecocore (153.6 MB)</option>
+<option value="ecto.db">ecto (450.6 MB)</option>
+<option value="edam.db">edam (11.3 MB)</option>
+<option value="efo-test.db">efo-test (460.0 MB)</option>
+<option value="efo.db">efo (460.0 MB)</option>
+<option value="emapa.db">emapa (42.9 MB)</option>
+<option value="enanomapper.db">enanomapper (55.2 MB)</option>
+<option value="envo.db">envo (62.7 MB)</option>
+<option value="epio.db">epio (0 B)</option>
+<option value="eupath.db">eupath (18.9 MB)</option>
+<option value="exo.db">exo (732.0 KB)</option>
+<option value="fao.db">fao (724.0 KB)</option>
+<option value="fbbi.db">fbbi (1.9 MB)</option>
+<option value="fbbt.db">fbbt (767.5 MB)</option>
+<option value="fbcv.db">fbcv (22.5 MB)</option>
+<option value="fbdv.db">fbdv (7.3 MB)</option>
+<option value="fideo.db">fideo (12.1 MB)</option>
+<option value="flopo.db">flopo (328.9 MB)</option>
+<option value="fma.db">fma (255.1 MB)</option>
+<option value="fobi.db">fobi (8.5 MB)</option>
+<option value="foo.db">foo (56.0 KB)</option>
+<option value="foodon.db">foodon (330.7 MB)</option>
+<option value="fovt.db">fovt (263.6 MB)</option>
+<option value="fypo.db">fypo (478.3 MB)</option>
+<option value="gaz.db">gaz (938.0 MB)</option>
+<option value="gecko.db">gecko (524.0 KB)</option>
+<option value="geno.db">geno (2.8 MB)</option>
+<option value="geo.db">geo (980.0 KB)</option>
+<option value="gno.db">gno (318.8 MB)</option>
+<option value="go-nucleus.db">go-nucleus (1.8 MB)</option>
+<option value="go-plus.db">go-plus (520.0 KB)</option>
+<option value="go.db">go (1.3 GB)</option>
+<option value="goa_uniprot_all.db">goa_uniprot_all (8.0 KB)</option>
+<option value="gsso.db">gsso (0 B)</option>
+<option value="gssox.db">gssox (0 B)</option>
+<option value="hancestro.db">hancestro (2.3 MB)</option>
+<option value="hao.db">hao (33.6 MB)</option>
+<option value="hom.db">hom (520.0 KB)</option>
+<option value="hp.db">hp (658.6 MB)</option>
+<option value="hsapdv.db">hsapdv (2.2 MB)</option>
+<option value="hso.db">hso (3.7 MB)</option>
+<option value="htn.db">htn (3.6 MB)</option>
+<option value="iao.db">iao (1.6 MB)</option>
+<option value="iceo.db">iceo (320.3 MB)</option>
+<option value="ico.db">ico (4.3 MB)</option>
+<option value="ido.db">ido (2.1 MB)</option>
+<option value="ino.db">ino (1.4 MB)</option>
+<option value="inst.db">inst (520.0 KB)</option>
+<option value="kisao.db">kisao (6.6 MB)</option>
+<option value="labo.db">labo (1.1 MB)</option>
+<option value="lepao.db">lepao (10.5 MB)</option>
+<option value="ma.db">ma (10.2 MB)</option>
+<option value="mamo.db">mamo (760.0 KB)</option>
+<option value="maxo.db">maxo (477.4 MB)</option>
+<option value="mco.db">mco (63.8 MB)</option>
+<option value="mf.db">mf (1.7 MB)</option>
+<option value="mfmo.db">mfmo (2.6 MB)</option>
+<option value="mfoem.db">mfoem (2.6 MB)</option>
+<option value="mfomd.db">mfomd (4.3 MB)</option>
+<option value="mi.db">mi (7.7 MB)</option>
+<option value="miapa.db">miapa (1.2 MB)</option>
+<option value="micro.db">micro (0 B)</option>
+<option value="mmo.db">mmo (3.2 MB)</option>
+<option value="mmusdv.db">mmusdv (1.2 MB)</option>
+<option value="mod.db">mod (19.3 MB)</option>
+<option value="monarch.db">monarch (1.8 GB)</option>
+<option value="mondo.db">mondo (1.1 GB)</option>
+<option value="mondo_merged.db">mondo_merged (910.0 MB)</option>
+<option value="monster.db">monster (2.4 GB)</option>
+<option value="mop.db">mop (12.3 MB)</option>
+<option value="mp.db">mp (633.5 MB)</option>
+<option value="mpath.db">mpath (3.2 MB)</option>
+<option value="mpio.db">mpio (520.0 KB)</option>
+<option value="mro.db">mro (210.3 MB)</option>
+<option value="ms.db">ms (247.9 MB)</option>
+<option value="msio.db">msio (5.1 MB)</option>
+<option value="nbo.db">nbo (50.4 MB)</option>
+<option value="ncbitaxon.db">ncbitaxon (10.2 GB)</option>
+<option value="ncit.db">ncit (1.9 GB)</option>
+<option value="ncro.db">ncro (14.6 MB)</option>
+<option value="nomen.db">nomen (696.0 KB)</option>
+<option value="oae.db">oae (87.3 MB)</option>
+<option value="oarcs.db">oarcs (3.5 MB)</option>
+<option value="oba.db">oba (911.0 MB)</option>
+<option value="obcs.db">obcs (4.6 MB)</option>
+<option value="obi.db">obi (34.1 MB)</option>
+<option value="obib.db">obib (7.4 MB)</option>
+<option value="obo-ontologies.db">obo-ontologies (1.4 MB)</option>
+<option value="obo_prefixes.db">obo_prefixes (120.0 KB)</option>
+<option value="ogg.db">ogg (812.9 MB)</option>
+<option value="ogms.db">ogms (968.0 KB)</option>
+<option value="ogsf.db">ogsf (3.3 MB)</option>
+<option value="ohd.db">ohd (21.9 MB)</option>
+<option value="ohmi.db">ohmi (12.3 MB)</option>
+<option value="ohpi.db">ohpi (207.6 MB)</option>
+<option value="olatdv.db">olatdv (580.0 KB)</option>
+<option value="omiabis.db">omiabis (532.0 KB)</option>
+<option value="omit.db">omit (279.1 MB)</option>
+<option value="omo.db">omo (520.0 KB)</option>
+<option value="omp.db">omp (11.2 MB)</option>
+<option value="omrse.db">omrse (3.8 MB)</option>
+<option value="one.db">one (24.3 MB)</option>
+<option value="ons.db">ons (47.8 MB)</option>
+<option value="ontoavida.db">ontoavida (1.2 MB)</option>
+<option value="ontoneo.db">ontoneo (9.1 MB)</option>
+<option value="oostt.db">oostt (3.5 MB)</option>
+<option value="opl.db">opl (3.0 MB)</option>
+<option value="opmi.db">opmi (27.3 MB)</option>
+<option value="ornaseq.db">ornaseq (648.0 KB)</option>
+<option value="ovae.db">ovae (24.4 MB)</option>
+<option value="pato.db">pato (203.7 MB)</option>
+<option value="pato.db">pato (520.0 KB)</option>
+<option value="pcl.db">pcl (713.1 MB)</option>
+<option value="pco.db">pco (1.7 MB)</option>
+<option value="pdro.db">pdro (1.7 MB)</option>
+<option value="pdumdv.db">pdumdv (520.0 KB)</option>
+<option value="peco.db">peco (40.0 MB)</option>
+<option value="phenio.db">phenio (14.7 GB)</option>
+<option value="phipo.db">phipo (59.0 MB)</option>
+<option value="plana.db">plana (9.2 MB)</option>
+<option value="planp.db">planp (39.1 MB)</option>
+<option value="po.db">po (21.9 MB)</option>
+<option value="poro.db">poro (5.2 MB)</option>
+<option value="ppeo.db">ppeo (640.0 KB)</option>
+<option value="ppo.db">ppo (4.1 MB)</option>
+<option value="pr.db">pr (3.7 GB)</option>
+<option value="proco.db">proco (5.1 MB)</option>
+<option value="psdo.db">psdo (8.4 MB)</option>
+<option value="pso.db">pso (23.7 MB)</option>
+<option value="pw.db">pw (10.6 MB)</option>
+<option value="rbo.db">rbo (146.7 MB)</option>
+<option value="reacto.db">reacto (538.5 MB)</option>
+<option value="reactome-Homo-sapiens-relation-graph.tsv.db">reactome-Homo-sapiens-relation-graph.tsv (355.1 MB)</option>
+<option value="reactome-Homo-sapiens.db">reactome-Homo-sapiens (1.7 GB)</option>
+<option value="rex.db">rex (1.9 MB)</option>
+<option value="ro.db">ro (1.9 MB)</option>
+<option value="robot-example.db">robot-example (532.0 KB)</option>
+<option value="rs.db">rs (10.7 MB)</option>
+<option value="rxno.db">rxno (5.4 MB)</option>
+<option value="sbo.db">sbo (1.3 MB)</option>
+<option value="scdo.db">scdo (12.1 MB)</option>
+<option value="schema-dot-org.db">schema-dot-org (5.2 MB)</option>
+<option value="sepio.db">sepio (1.1 MB)</option>
+<option value="so.db">so (13.2 MB)</option>
+<option value="spd.db">spd (4.3 MB)</option>
+<option value="stato.db">stato (7.3 MB)</option>
+<option value="sweetAll.db">sweetAll (45.9 MB)</option>
+<option value="swo.db">swo (21.4 MB)</option>
+<option value="symp.db">symp (2.3 MB)</option>
+<option value="tao.db">tao (0 B)</option>
+<option value="taxrank.db">taxrank (520.0 KB)</option>
+<option value="test.db">test (520.0 KB)</option>
+<option value="to.db">to (62.7 MB)</option>
+<option value="trans.db">trans (520.0 KB)</option>
+<option value="tto.db">tto (195.8 MB)</option>
+<option value="txpo.db">txpo (98.3 MB)</option>
+<option value="uberon-ext.db">uberon-ext (518.7 MB)</option>
+<option value="uberon.db">uberon (906.7 MB)</option>
+<option value="uberon.db">uberon (520.0 KB)</option>
+<option value="uberon_cm.db">uberon_cm (384.4 MB)</option>
+<option value="uo.db">uo (1.4 MB)</option>
+<option value="upheno.db">upheno (2.7 GB)</option>
+<option value="vbo.db">vbo (245.8 MB)</option>
+<option value="vo.db">vo (45.1 MB)</option>
+<option value="vt.db">vt (15.9 MB)</option>
+<option value="vto.db">vto (558.1 MB)</option>
+<option value="wbbt.db">wbbt (43.1 MB)</option>
+<option value="wbls.db">wbls (47.4 MB)</option>
+<option value="wbphenotype.db">wbphenotype (276.1 MB)</option>
+<option value="xao.db">xao (16.0 MB)</option>
+<option value="xco.db">xco (2.9 MB)</option>
+<option value="xlmod.db">xlmod (5.9 MB)</option>
+<option value="xpo.db">xpo (463.9 MB)</option>
+<option value="zeco.db">zeco (520.0 KB)</option>
+<option value="zfa.db">zfa (34.4 MB)</option>
+<option value="zfs.db">zfs (520.0 KB)</option>
+<option value="zp.db">zp (796.3 MB)</option>
+
+	</select>
+      </p>
+
+      <p id="button_holder"><button id="button">Execute</button></p>
+
+      <p>
+	<label for='query'>Output</label>
+	<br />
+	<pre id="output">Results will be here, please be patient...</pre>
+      </p>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.min.js" integrity="sha512-VYs2RuvWreNg7oouVhZ/9bEvdPgyd5L2iCPCB8+8Qks/PHbmnc82TQOEctYoEKPveJGML8s+3NGcUEZYJrFIqg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript">
+
+      // Global?
+      config = {
+	  locateFile: filename => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/${filename}`
+      }
+      initSqlJs(config).then(function(SQL){
+
+	  var database;
+	  var current_ont = 'cob.db';
+
+	  function execute(db, q){
+	      console.log('execute: ' + q);
+	      var ret = db.exec(q);
+	      console.log('done');
+	      return ret
+	  }
+	  function render(obj){
+	      document.getElementById("output").innerHTML =
+		  JSON.stringify(obj, null, "\t");
+	  }
+	  function buttonClick(){
+	      console.log('click!');
+
+	      var next_ont = document.getElementById("ont").value;
+	      if( next_ont != current_ont ){
+		  console.log('need to update ontology');
+
+		  var xhr = new XMLHttpRequest();
+		  current_ont = document.getElementById("ont").value;
+		  xhr.open('GET', 'https://s3.amazonaws.com/bbop-sqlite/' + current_ont, true);
+		  xhr.responseType = 'arraybuffer';
+		  xhr.onload = e => {
+
+		      console.log("database grabbed");
+
+		      var uInt8Array = new Uint8Array(xhr.response);
+		      database = new SQL.Database(uInt8Array);
+
+		      var q = document.getElementById("query").value;
+		      var contents = execute(database, q);
+		      render(contents);
+		  };
+		  xhr.send();
+		  document.getElementById("output").innerHTML =
+		      'Results will be here, please be patient...';
+
+	      }else{
+		  console.log('same ontology');
+
+		  document.getElementById("output").innerHTML =
+		      'Results will be here, please be patient...';
+		  var q = document.getElementById("query").value;
+		  var contents = execute(database, q);
+		  render(contents);
+	      }
+	  }
+
+
+	  console.log("page is fully loaded; initialize");
+
+	  var xhr = new XMLHttpRequest();
+	  current_ont = document.getElementById("ont").value;
+	  xhr.open('GET', 'https://s3.amazonaws.com/bbop-sqlite/' + current_ont, true);
+	  xhr.responseType = 'arraybuffer';
+	  xhr.onload = e => {
+
+	      console.log("database grabbed");
+
+	      var uInt8Array = new Uint8Array(xhr.response);
+	      database = new SQL.Database(uInt8Array);
+
+	      document.getElementById("button").onclick = buttonClick;
+
+	      // I/O cycle.
+	      console.log("i/o cycle started");
+	      var query = document.getElementById("query").value;
+	      var contents = execute(database, query);
+	      render(contents);
+	  };
+	  xhr.send();
+      });
+
+    </script>
+  </body>
+
+</html>
